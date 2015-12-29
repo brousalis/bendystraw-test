@@ -27,4 +27,3 @@ angular.module 'testApp', [
 
 .controller 'appController', ($rootScope, $scope) ->
   console.log 'app controller'
-  test = true
