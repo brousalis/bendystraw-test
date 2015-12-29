@@ -6,10 +6,6 @@ an example of what an Angular app could look like using bendystraw.
 
 for more information, [read the bendystraw docs](https://github.com/brousalis/bendystraw/)
 
-<br>
----
-<br>
-
 to setup the app:
 
     npm install
