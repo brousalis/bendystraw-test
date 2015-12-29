@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="testApp">
+  <head>
+    <meta charset="utf-8">
+    <title>omg marketing</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- build:css stylesheets/app.css -->
+      <!-- inject:css -->
+      <!-- endinject -->
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div ui-view></div>
+
+    <!-- build:js(source) app/vendor.js -->
+      <!-- bower:js -->
+      <!-- endbower -->
+
+      <!-- inject:vendor -->
+      <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- build:js app/app.js -->
+      <!-- inject:templates -->
+      <!-- endinject -->
+
+      <!-- inject:js -->
+      <!-- endinject -->
+    <!-- endbuild -->
+
+    <!-- @if NODE_ENV='production' -->
+    <p>this shows in production</p>
+    <!-- @endif -->
+  </body>
+</html>

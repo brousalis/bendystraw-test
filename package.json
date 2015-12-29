@@ -1,0 +1,19 @@
+{
+  "name": "bendystraw-test",
+  "version": "1.0.0",
+  "author": "Pete Brousalis <brousapg@gmail.com>",
+  "homepage": "http://github.com/brousalis/bendystraw-test",
+  "description": "An example app using bendystraw",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brousalis/bendystraw-test.git"
+  },
+  "private": true,
+  "devDependencies": {
+    "bendystraw": "github:brousalis/bendystraw",
+    "gulp": "^3.9.0"
+  },
+  "dependencies": {
+    "bendystraw": "github:brousalis/bendystraw"
+  }
+}
