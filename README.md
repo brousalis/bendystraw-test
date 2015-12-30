@@ -36,6 +36,19 @@ then you can:
 if you want, you can run the commands in staging mode, and the `.env.staging` will get loaded instead of `.env`:
 
     gulp --env staging
+
+and to deploy, set your environment variables for staging:
+
+```bash
+export AWS_BUCKET=
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+export AWS_DISTRIBUTION_ID=
+export AWS_CLOUDFRONT_DOMAIN=xxxxx.cloudfront.net
+```
+
+and
     gulp build --env staging
     gulp deploy --env staging
 
+> I agree this is kind of awkward, but it is done to support CircleCI based deployments which has a less than ideal solution to env variables. I'd like to rethink how to handle app configuration and multiple environments
