@@ -12,8 +12,5 @@
   "devDependencies": {
     "bendystraw": "github:brousalis/bendystraw",
     "gulp": "^3.9.0"
-  },
-  "dependencies": {
-    "bendystraw": "github:brousalis/bendystraw"
   }
 }
