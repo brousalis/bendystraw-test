@@ -10,7 +10,7 @@
   },
   "private": true,
   "devDependencies": {
-    "bendystraw": "github:brousalis/bendystraw",
+    "bendystraw": "^1.4.0",
     "gulp": "^3.9.0",
     "jasmine-core": "^2.4.1",
     "karma-angular-filesort": "^1.0.1",
