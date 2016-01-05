@@ -14,4 +14,4 @@ angular.module('testApp.dashboard', [
 
 .controller 'dashboardController', ($q, $rootScope, $scope) ->
   console.log 'dashboard controller'
-  $scope.welcome = 'welcome to the best dashboard'
+  $scope.welcome = 'welcome to the dashboard'
