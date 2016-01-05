@@ -1,0 +1,30 @@
+machine:
+  node:
+    version: "5.1.0"
+
+dependencies:
+  cache_directories:
+    - node_modules
+    - bower_components
+  override:
+    - bower prune && bower install
+
+test:
+  override:
+    - ./node_modules/.bin/gulp test
+
+deployment:
+  staging:
+    branch: development
+    commands:
+      - ./node_modules/.bin/gulp ci --env staging
+      - ./node_modules/.bin/gulp build --env staging
+      - ./node_modules/.bin/gulp deploy --env staging
+
+  production:
+    branch: master
+    commands:
+      - ./node_modules/.bin/gulp ci --env production
+      - ./node_modules/.bin/gulp build --env production
+      - ./node_modules/.bin/gulp release
+      - ./node_modules/.bin/gulp deploy --env production
