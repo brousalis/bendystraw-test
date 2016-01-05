@@ -20,14 +20,14 @@ deployment:
   staging:
     branch: development
     commands:
-      - if [[ ! -z $CI_PULL_REQUEST ]] ; then ./node_modules/.bin/gulp ci --env staging ; fi
-      - if [[ ! -z $CI_PULL_REQUEST ]] ; then ./node_modules/.bin/gulp build --env staging ; fi
-      - if [[ ! -z $CI_PULL_REQUEST ]] ; then if [[ ! -z $CI_PULL_REQUEST ]] ; then ./node_modules/.bin/gulp deploy --env staging ; fi
+      - ./node_modules/.bin/gulp ci --env staging
+      - ./node_modules/.bin/gulp build --env staging
+      - ./node_modules/.bin/gulp deploy --env staging
 
   production:
     branch: master
     commands:
-      - if [[ ! -z $CI_PULL_REQUEST ]] ; then ./node_modules/.bin/gulp ci --env production ; fi
-      - if [[ ! -z $CI_PULL_REQUEST ]] ; then ./node_modules/.bin/gulp build --env production ; fi
-      - if [[ ! -z $CI_PULL_REQUEST ]] ; then ./node_modules/.bin/gulp release ; fi
-      - if [[ ! -z $CI_PULL_REQUEST ]] ; then ./node_modules/.bin/gulp deploy --env production ; fi
+      - ./node_modules/.bin/gulp ci --env production
+      - ./node_modules/.bin/gulp build --env production
+      - ./node_modules/.bin/gulp release
+      - ./node_modules/.bin/gulp deploy --env production
