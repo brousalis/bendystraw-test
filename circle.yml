@@ -7,6 +7,7 @@ dependencies:
     - node_modules
     - bower_components
   override:
+    - npm prune && npm install
     - bower prune && bower install
 
 test:
