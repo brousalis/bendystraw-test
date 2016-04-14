@@ -1,6 +1,7 @@
 'use strict'
 
 angular.module 'testApp', [
+  # come from bendystraw
   'templates'
   'env'
 

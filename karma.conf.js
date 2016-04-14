@@ -1,48 +1,43 @@
 'use strict';
 
+var _ = require('lodash');
 var path = require('path');
+var wiredep = require('wiredep');
 
-var config = {
-  paths: {
-    src: 'source', // source folder for the app
-    dest: 'build', // destination for the production build
-    tmp: '.dev', // temporary development build folder
+var DEV_PATH = '.dev';
+var TEST_PATH = 'test/unit';
+var SOURCE_PATH = 'source';
 
-    scripts: 'app', // folder where main javascript files are located
-    styles: 'stylesheets', // stylesheets folder
-    images: 'images', // image folder
-    fonts: 'fonts', // fonts folder
-    tests: 'tests' // folder for end to end tests
-  }
+function listFiles() {
+  // wiredep grabs the bower dependencies for the app
+  // then we concat our app's compiled js files
+  // and finally, our tests
+  return wiredep().js
+    .concat([
+      path.join(DEV_PATH, '/**/*.js'),
+      path.join(DEV_PATH, '/**/*.html'),
+      path.join(TEST_PATH, '/**/*.coffee'),
+    ])
+    .map(function(pattern) {
+      return {
+        pattern: pattern
+      };
+    });
 }
 
 module.exports = function(kconfig){
   var configuration = {
-    files: [
-      path.join(config.paths.tmp, '/**/*.spec.js'),
-      path.join(config.paths.tmp, '/**/*.mock.js'),
-      path.join('tests/**/*.js'),
-      path.join(config.paths.tmp, '/**/*.html')
-    ],
-
-    singleRun: true,
-
-    autoWatch: false,
-
-    frameworks: ['jasmine', 'angular-filesort'],
-
-    angularFilesort: {
-      whitelist: [path.join(config.paths.tmp, '/**/!(*.html|*.spec|*.mock).js')]
-    },
-
+    angularFilesort: { whitelist: [path.join(DEV_PATH, '/**/!(*.html|*.spec|*.mock).js')] },
     browsers: ['PhantomJS'],
-
+    files: listFiles(),
+    frameworks: ['jasmine', 'angular-filesort'],
     plugins: [
+      'karma-coffee-preprocessor',
       'karma-phantomjs-launcher',
       'karma-angular-filesort',
       'karma-jasmine',
-    ]
+    ],
+    preprocessors: { '**/*.coffee': ['coffee'] },
   };
-
   kconfig.set(configuration);
 };

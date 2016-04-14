@@ -10,12 +10,16 @@
   },
   "private": true,
   "devDependencies": {
-    "bendystraw": "^1.4.0",
+    "bendystraw": "^1.4.3",
+    "coffee-script": "^1.10.0",
     "gulp": "^3.9.0",
     "jasmine-core": "^2.4.1",
     "karma-angular-filesort": "^1.0.1",
+    "karma-coffee-preprocessor": "^0.3.0",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.2",
-    "phantomjs": "^1.9.19"
+    "phantomjs": "^1.9.19",
+    "protractor": "^3.2.2",
+    "wiredep": "^4.0.0"
   }
 }
