@@ -1,13 +1,10 @@
 require('bendystraw')({
-  paths: {
-    scripts: 'app'
-  },
-
   angular: {
     enabled: true
   },
 
   images: {
+    // Pull in images from the `rolodex` npm package
     bower: ['bower_components/rolodex/**/*']
   },
 

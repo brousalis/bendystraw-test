@@ -1,26 +1,23 @@
 'use strict'
 
 angular.module 'testApp', [
-  # come from bendystraw
-  'templates'
-  'env'
+  # from bendystraw
+  'bendy.templates' # Angular templateCache file
+  'bendy.env' # ENV and NODE_ENV
 
   'restangular'
   'ui.router'
   'testApp.dashboard'
 ]
 
-.constant 'CONFIG',
-  TEST: 'true'
-
-.config ($httpProvider, $provide, $urlRouterProvider, $stateProvider, RestangularProvider, CONFIG, ENV, NODE_ENV) ->
-  console.log 'app config', CONFIG, ENV, NODE_ENV
+.config ($httpProvider, $provide, $urlRouterProvider, $stateProvider, RestangularProvider, ENV, NODE_ENV) ->
+  console.log 'app config', ENV, NODE_ENV
 
   $stateProvider
-  .state 'main',
-    abstract: true
-    templateUrl: 'app/layouts/mainLayout.html'
-    controller: 'appController'
+    .state 'main',
+      abstract: true
+      templateUrl: 'app/layouts/main.html'
+      controller: 'appController'
 
   $urlRouterProvider.otherwise('/dashboard')
 

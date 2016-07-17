@@ -2,9 +2,12 @@
 <html ng-app="testApp">
   <head>
     <meta charset="utf-8">
-    <title>marketing 3.0</title>
+    <title>undefined is true</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
 
     <!-- build:css stylesheets/app.css -->
       <!-- inject:css -->
@@ -14,7 +17,7 @@
   <body>
     <div ui-view></div>
 
-    <!-- build:js(source) app/vendor.js -->
+    <!-- build:js app/vendor.js -->
       <!-- bower:js -->
       <!-- endbower -->
 
@@ -31,7 +34,7 @@
     <!-- endbuild -->
 
     <!-- @if NODE_ENV='production' -->
-    <p>this shows in production</p>
+    <p>this shows only in production</p>
     <!-- @endif -->
   </body>
 </html>
