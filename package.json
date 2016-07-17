@@ -1,6 +1,6 @@
 {
   "name": "bendystraw-test",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "author": "Pete Brousalis <brousapg@gmail.com>",
   "homepage": "http://github.com/brousalis/bendystraw-test",
   "description": "An example app using bendystraw",
@@ -10,7 +10,7 @@
   },
   "private": true,
   "devDependencies": {
-    "bendystraw": "^1.4.3",
+    "bendystraw": "brousalis/bendystraw",
     "gulp": "^3.9.0"
   }
 }
